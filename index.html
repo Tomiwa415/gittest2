@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+    <style>
+        *{
+            background-color: blanchedalmond;
+        }
+        h4{
+            text-align: center;
+            font-size: 15px;
+        }
+        h3{
+            text-align: center;
+            font-size: 25px;;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="yuheng-ouyang-aUtmNs6iMos-unsplash.jpg" alt="A picture of an iphone 15">
+
+    <h3>
+        OLD IPHONE 15 GIVEAWAY
+    </h3>
+    <h4>
+        Giveaway ends on the 1st of april at 3:37 PM
+    </h4>
+    <p class="body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem alias dolor voluptatem eum! Sapiente aliquid nemo eaque. Quasi id incidunt eaque labore nostrum alias eius maiores odit culpa vero praesentium, aliquid quas corrupti magnam quibusdam possimus ratione neque deserunt modi nisi assumenda. Sed delectus at quibusdam hic blanditiis culpa, excepturi similique maiores accusantium eveniet sapiente possimus quisquam facere libero!
+    </p>
+    <p id="timer"></p>
+
+    <script>
+        var countDownDate = new Date("April 1, 2024 15:37:25").getTime();
+
+        var x = setInterval(function() {
+
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = days + " days " + hours + " hours "
+        + minutes + " min " + seconds + " secs ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED.";
+        }
+        }, 1000);
+    </script>
+</body>
+</html>
